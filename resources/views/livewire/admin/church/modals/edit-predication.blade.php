@@ -5,12 +5,15 @@
         <div class="modal-header">
         <h5 class="modal-title" id="editPredictionModalLabel">
             <i class="fa fa-microphone" aria-hidden="true"></i> UPDATE PREDICATION ON CHURCH</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <form wire:submit.prevent='update'>
             <div class="modal-body">
                 <div class="media d-flex justify-content-center">
-                    <div class="text-center" x-data="{imagePreview: '{{asset('image.jpg')}}'}">
+                   @if ($predicationSelected)
+                    <div class="text-center" x-data="{imagePreview: '{{asset($predicationSelected->cover_image_url==null ?'image.jpg':'storage/'.$predicationSelected->cover_image_url)}}'}">
                         <input class="d-none" wire:model.defer='state.cover_image_url' type="file" x-ref="image"x-on:change="
                                 reader = new FileReader();
                                 reader.onload=(event)=>{
@@ -23,6 +26,7 @@
                             x-bind:src="imagePreview ? imagePreview: '{{ asset('image.jpg') }}'"
                             alt="User profile picture">
                     </div>
+                   @endif
                 </div>
                 <div class="form-group mt-2">
                     <label for="predTitle">Prédication title</label>

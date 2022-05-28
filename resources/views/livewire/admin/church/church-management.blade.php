@@ -39,7 +39,7 @@
                         <th>Abreviation</th>
                         <th>Pastor</th>
                         <th>Email</th>
-                        <th class="text-center">Predications</th>
+                        <th class="text-center">Preaching</th>
                         <th>Actions</th>
                       </tr>
                       </thead>

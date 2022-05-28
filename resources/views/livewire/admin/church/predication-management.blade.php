@@ -13,7 +13,7 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.main') }}">Dashboard</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.church.management') }}">Church</a></li>
-                            <li class="breadcrumb-item active">Predication management</li>
+                            <li class="breadcrumb-item active">Preaching management</li>
                         </ol>
                     </div>
                     <div class="p-2">
@@ -31,11 +31,11 @@
         <div class="card-body">
             <div class="">
                 <div class="d-flex justify-content-between p-2">
-                    <h4 class="text-uppercase">List of predications</h4>
+                    <h4 class="text-uppercase">List of Preachings</h4>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary btn-sm"
                         data-toggle="modal" data-target="#createPredictionModal">
-                       <i class="fa fa-plus" aria-hidden="true"></i> New predication
+                       <i class="fa fa-plus" aria-hidden="true"></i> New Preaching
                     </button>
 
                 </div>

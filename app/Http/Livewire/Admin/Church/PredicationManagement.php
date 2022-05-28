@@ -15,16 +15,20 @@ class PredicationManagement extends Component
     public $church,$predicationSelected;
     public $state=[];
     public function mount(Church $church){
-
+        $this->state=[
+            'cover_image_url'=>null
+        ];
     }
 
     public function save(){
         $this->validateData();
         $predication=new Predication();
-        if ($this->state['cover_image_url']) {
+        if ($this->state['cover_image_url']!=null) {
             $cover=$this->state['cover_image_url'];
             $path_cover=$cover->store('church/covers','public');
             $predication->cover_image_url=$path_cover;
+        }else{
+            $this->dispatchBrowserEvent('data-error',['message'=>'Please, image cover miss']);
         }
         $audio=$this->state['audio_file_url'];
         $path_audio=$audio->store('church/predications','public');
@@ -63,8 +67,8 @@ class PredicationManagement extends Component
             $this->predicationSelected->audio_file_url=$path_audio;  
         }
         $this->predicationSelected->update();
-        Storage::disk('public')->delete($preview_cover);
-        Storage::disk('public')->delete($preview_cover);
+        $preview_cover==null?'':Storage::disk('public')->delete($preview_cover);
+        $preview_cover==null?'':Storage::disk('public')->delete($preview_audio);
         $this->dispatchBrowserEvent('data-updated',['message'=>'Church update successfull !']);
 
     }
@@ -75,7 +79,7 @@ class PredicationManagement extends Component
             [
                 'title'=>'required',
                 'predicator_name'=>'required',
-                'audio_file_url'=>'required|mimes:mp3,wav',
+                'audio_file_url'=>'required|mimes:mp3,wav,m4a',
             ]
         )->validate();
     }

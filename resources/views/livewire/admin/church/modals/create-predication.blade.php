@@ -5,7 +5,9 @@
         <div class="modal-header">
         <h5 class="modal-title" id="createPredictionModalLabel">
             <i class="fa fa-microphone" aria-hidden="true"></i> ADD NEW PREDICATION ON CHURCH</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <form wire:submit.prevent='save'>
             <div class="modal-body">
