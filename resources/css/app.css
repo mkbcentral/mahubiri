@@ -1,0 +1,60 @@
+@import 'admin-lte/dist/css/adminlte.min.css';
+@import 'admin-lte/plugins/fontawesome-free/css/all.min.css';
+@import 'admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css';
+@import 'admin-lte/plugins/toastr/toastr.min.css';
+@import 'admin-lte/plugins/select2/css/select2.min.css';
+@import 'admin-lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css';
+
+.text-app{
+    color: rgb(10, 7, 30)
+}
+.bg-app{
+    background-color: rgb(10, 7, 30);
+    color: wheat;
+}
+.table-hover thead tr:hover th,
+.table-hover tbody tr:hover td {
+    background-color: #5b4bd3;
+    color: white;
+}
+.cursor-hand {
+    cursor: pointer;
+
+}
+.money_format {
+    font-family: Consolas,
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace,
+        serif;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+.zoom:hover {
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari 3-8 */
+    transform: scale(1.1);
+}
+
+.spinner {
+   width: 8.2px;
+   height: 8.2px;
+   border-radius: 11.2px;
+   box-shadow: 28px 0px 0 0 rgba(71,75,255,0.2), 22.7px 16.5px 0 0 rgba(71,75,255,0.4), 8.68px 26.6px 0 0 rgba(71,75,255,0.6), -8.68px 26.6px 0 0 rgba(71,75,255,0.8), -22.7px 16.5px 0 0 #474bff;
+   animation: spinner-b87k6z 1s infinite linear;
+}
+
+@keyframes spinner-b87k6z {
+   to {
+      transform: rotate(360deg);
+   }
+}
